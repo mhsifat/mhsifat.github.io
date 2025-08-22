@@ -269,3 +269,37 @@ h3 {
   font-size: 1.1rem;
   margin-bottom: 4px;
 }
+
+/* Initial hidden state */
+.timeline-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-in-out;
+}
+
+/* When visible */
+.timeline-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.contact-icons a {
+  font-size: 1.8rem;
+  color: #ffffff;
+  background: #6a00ff;
+  padding: 12px;
+  border-radius: 50%;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.contact-icons a:hover {
+  transform: scale(1.15);
+  background: #9b4dff;
+}
