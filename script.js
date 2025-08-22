@@ -59,21 +59,19 @@ toggleButton.addEventListener("click", () => {
   }
 });
 
-// Animate Education Progress Bars
-const progressBars = document.querySelectorAll('.progress');
+// Timeline Scroll Animation
+const timelineItems = document.querySelectorAll('.timeline-item');
 
-function animateProgress() {
-  const section = document.getElementById('education');
-  const sectionTop = section.getBoundingClientRect().top;
-  const screenHeight = window.innerHeight;
+function showTimelineItems() {
+  const triggerBottom = window.innerHeight * 0.85;
 
-  if (sectionTop < screenHeight - 50) {
-    progressBars.forEach(bar => {
-      const width = bar.style.width;
-      bar.style.width = width; // triggers CSS transition
-    });
-    window.removeEventListener('scroll', animateProgress);
-  }
+  timelineItems.forEach(item => {
+    const itemTop = item.getBoundingClientRect().top;
+    if(itemTop < triggerBottom) {
+      item.classList.add('show');
+    }
+  });
 }
 
-window.addEventListener('scroll', animateProgress);
+window.addEventListener('scroll', showTimelineItems);
+window.addEventListener('load', showTimelineItems);
