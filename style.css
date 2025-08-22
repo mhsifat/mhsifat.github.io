@@ -14,31 +14,45 @@ body {
   padding: 20px;
 }
 
-/* Header */
-header {
-  background: #222;
+/* Hero Section */
+.hero {
+  background: linear-gradient(to right, #007acc, #005f99);
   color: #fff;
-  padding: 20px 0;
   text-align: center;
+  padding: 60px 20px;
 }
 
-header h1 {
-  margin: 0;
+.hero-content {
+  max-width: 700px;
+  margin: auto;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  margin-bottom: 15px;
+}
+
+.hero h1 {
   font-size: 2.5rem;
+  margin: 10px 0;
 }
 
-header p {
-  margin: 5px 0 15px;
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
 }
 
-header nav a {
+.hero nav a {
   color: #fff;
   margin: 0 10px;
   text-decoration: none;
   font-weight: bold;
 }
 
-header nav a:hover {
+.hero nav a:hover {
   text-decoration: underline;
 }
 
@@ -87,3 +101,4 @@ footer {
   background: #222;
   color: #fff;
 }
+
