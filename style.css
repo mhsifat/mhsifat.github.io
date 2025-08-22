@@ -43,6 +43,7 @@ body {
 .hero p {
   font-size: 1.2rem;
   margin-bottom: 20px;
+  min-height: 24px; /* keeps space for typing text */
 }
 
 .hero nav a {
@@ -75,6 +76,11 @@ h2 {
   padding: 15px;
   margin: 15px 0;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
 }
 
 /* Skills */
@@ -100,32 +106,4 @@ footer {
   padding: 15px;
   background: #222;
   color: #fff;
-}
-
-/* Fade-in on load */
-section, .card, .skills-list li {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 0.8s forwards;
-}
-
-section:nth-of-type(1) { animation-delay: 0.2s; }
-section:nth-of-type(2) { animation-delay: 0.4s; }
-section:nth-of-type(3) { animation-delay: 0.6s; }
-section:nth-of-type(4) { animation-delay: 0.8s; }
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Hover effect on project cards */
-.card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
 }
