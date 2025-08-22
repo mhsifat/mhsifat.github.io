@@ -65,6 +65,19 @@ body{
 .card{background:var(--card-bg);color:var(--text);border-radius:var(--radius);padding:16px;margin:14px 0;box-shadow:var(--shadow)}
 .card:hover{transform:translateY(-6px);transition:transform .18s}
 
+/* Fix: ensure card text is dark (override .section white color) */
+.timeline-content,
+.timeline-content p,
+.timeline-content h3,
+.timeline-content .institution,
+.timeline-content .period,
+.card,
+.card * ,
+.skill-card,
+.skill-card * {
+  color: var(--text) !important;
+}
+
 /* TIMELINE */
 .timeline{position:relative;margin:30px 0;padding:20px 0}
 .timeline::before{content:'';position:absolute;left:50%;transform:translateX(-50%);width:4px;height:100%;background:linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.03));border-radius:3px;z-index:1}
