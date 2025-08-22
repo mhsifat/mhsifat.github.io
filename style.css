@@ -346,3 +346,11 @@ body.dark .skill-card {
   color: #e6e6ea;
 }
 body.dark .skill-info small { color: rgba(255,255,255,0.72); }
+
+/* Slightly larger & refined typography for About card */
+.about-card p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 0;
+  color: var(--text); /* ensures dark text on the white card */
+}
