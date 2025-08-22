@@ -236,3 +236,36 @@ body.dark {
 }
 body.dark .main-nav a { color: rgba(255,255,255,0.95); }
 body.dark .mode-btn { background: rgba(255,255,255,0.9); color: #2b004f; }
+
+/* Apply Inter font globally */
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(135deg, #2b004f 0%, #6a00ff 50%, #caa6ff 100%);
+  color: #0f1724;
+}
+
+/* Timeline text */
+.timeline-content p {
+  margin: 4px 0 6px;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.35;
+}
+
+/* Badge slightly smaller and subtle */
+.badge {
+  font-size: 0.82rem;
+  padding: 4px 8px;
+  margin-top: 6px;
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+}
+h3 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
