@@ -133,6 +133,11 @@ body.dark .skills-list li {
   color: #fff;
 }
 
+body.dark #darkModeToggle {
+  background: #eee;
+  color: #333;
+}
+
 /* Timeline Container */
 .timeline {
   position: relative;
