@@ -107,3 +107,28 @@ footer {
   background: #222;
   color: #fff;
 }
+
+/* Dark Mode Styles */
+body.dark {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+body.dark header.hero {
+  background: linear-gradient(to right, #333, #111);
+}
+
+body.dark .card {
+  background: #1e1e1e;
+  color: #e0e0e0;
+}
+
+body.dark footer {
+  background: #111;
+  color: #e0e0e0;
+}
+
+body.dark .skills-list li {
+  background: #555;
+  color: #fff;
+}
