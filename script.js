@@ -58,3 +58,22 @@ toggleButton.addEventListener("click", () => {
     toggleButton.textContent = "🌙 Dark Mode";
   }
 });
+
+// Animate Education Progress Bars
+const progressBars = document.querySelectorAll('.progress');
+
+function animateProgress() {
+  const section = document.getElementById('education');
+  const sectionTop = section.getBoundingClientRect().top;
+  const screenHeight = window.innerHeight;
+
+  if (sectionTop < screenHeight - 50) {
+    progressBars.forEach(bar => {
+      const width = bar.style.width;
+      bar.style.width = width; // triggers CSS transition
+    });
+    window.removeEventListener('scroll', animateProgress);
+  }
+}
+
+window.addEventListener('scroll', animateProgress);
