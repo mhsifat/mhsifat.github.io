@@ -325,3 +325,97 @@ h3 {
 .contact a:hover {
   color: #0077b5; /* LinkedIn blue */
 }
+
+/* --- Skills Grid & Card Styles (animated, professional) --- */
+.skills-intro {
+  margin: 8px 0 18px;
+  color: rgba(255,255,255,0.92);
+  opacity: 0.95;
+}
+
+/* grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  align-items: stretch;
+  margin-top: 10px;
+}
+
+/* skill card */
+.skill-card {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.92));
+  color: var(--text);
+  border-radius: 12px;
+  padding: 14px;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  box-shadow: 0 10px 30px rgba(11,7,22,0.18);
+  transform: translateY(28px) scale(0.99);
+  opacity: 0;
+  transition: transform 420ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms, opacity 420ms;
+  will-change: transform, opacity;
+}
+
+/* show class added by JS */
+.skill-card.show {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* hover / focus */
+.skill-card:hover,
+.skill-card:focus {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 18px 50px rgba(11,7,22,0.28);
+  outline: none;
+}
+
+/* icon circle */
+.skill-icon {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, rgba(106,0,255,0.95), rgba(202,166,255,0.95));
+  color: white;
+  font-size: 1.25rem;
+  box-shadow: 0 8px 24px rgba(43,0,79,0.25);
+  animation: float 4s ease-in-out infinite;
+}
+
+/* text inside card */
+.skill-info strong { display: block; font-size: 1rem; }
+.skill-info small { color: rgba(0,0,0,0.6); font-size: 0.82rem; display:block; margin-top:4px; }
+
+/* subtle floating icon animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+/* responsive */
+@media (max-width: 1000px) {
+  .skills-grid { grid-template-columns: repeat(3,1fr); }
+}
+@media (max-width: 720px) {
+  .skills-grid { grid-template-columns: repeat(2,1fr); }
+  .skill-icon { width:48px; height:48px; min-width:48px; font-size:1.05rem; }
+}
+@media (max-width: 420px) {
+  .skills-grid { grid-template-columns: 1fr; }
+}
+
+/* Make sure skill cards show nicely in dark mode */
+body.dark .skill-card {
+  background: linear-gradient(180deg, rgba(12,12,15,0.9), rgba(18,18,22,0.85));
+  color: var(--text);
+}
+body.dark .skill-info small { color: rgba(255,255,255,0.72); }
