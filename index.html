@@ -1,101 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mehrab Hossain Sifat | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mehrab Hossain — Portfolio</title>
+
+  <!-- Google font (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <nav>
-      <h1 class="logo">Mehrab Hossain Sifat</h1>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <!-- HERO / HEADER -->
+  <header class="hero">
+    <div class="hero-inner container">
+      <div class="brand">
+        <img src="images/profile.jpg" alt="Mehrab Hossain" class="profile-pic" />
+        <div class="brand-text">
+          <h1 class="name">Mehrab Hossain</h1>
+          <p class="subtitle"><span class="typing" aria-hidden="true"></span></p>
+        </div>
+      </div>
+
+      <!-- Hamburger button (mobile) -->
+      <button id="menuButton" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- Navigation -->
+      <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <!-- Dark mode toggle -->
+      <div class="hero-controls">
+        <button id="darkModeToggle" class="mode-btn" aria-pressed="false">🌙</button>
+      </div>
+    </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <h2>Hello, I'm <span class="highlight">Mehrab</span></h2>
-    <p class="typing-text"></p>
-  </section>
-
-  <!-- About -->
-  <section id="about">
+  <!-- ABOUT -->
+  <section id="about" class="container section">
     <h2 class="section-title">About Me</h2>
-    <p>I am a passionate Chemical Engineering undergraduate at BUET with interests in thermodynamics, fluid mechanics, and data analysis. I love solving problems and creating efficient solutions.</p>
+    <p>
+      I’m a Chemical Engineering undergraduate at BUET. I’m passionate about process design,
+      thermodynamics, and data analysis. Outside academics I enjoy traveling, exploring new ideas,
+      and solving real-world problems.
+    </p>
   </section>
 
-  <!-- Education -->
-  <section id="education">
+  <!-- EDUCATION (alternating timeline) -->
+  <section id="education" class="container section">
     <h2 class="section-title">Education</h2>
+
     <div class="timeline">
-      <div class="timeline-item">
+      <div class="timeline-item left">
         <div class="timeline-content">
           <h3>Bachelor of Science in Chemical Engineering</h3>
           <p class="institution">Bangladesh University of Engineering and Technology</p>
-          <p class="period">Jul 2022 – Present</p>
-          <p><strong>CGPA:</strong> 3.86/4.00 (4 terms), Top 10%</p>
+          <p class="period">Jul 2022 - Present</p>
+          <span class="badge">CGPA: 3.86/4.00 — top 10% of class</span>
         </div>
       </div>
-      <div class="timeline-item">
+
+      <div class="timeline-item right">
         <div class="timeline-content">
           <h3>Higher Secondary Certificate (HSC)</h3>
-          <p class="institution">Khulna Public College</p>
-          <p class="period">2018 – 2020</p>
+          <p class="institution">Bangladesh Navy College, Khulna</p>
+          <p class="period">Jul 2019 - Feb 2022</p>
+          <span class="badge">GPA: 5.00/5.00 — 96% marks in PCM</span>
+        </div>
+      </div>
+
+      <div class="timeline-item left">
+        <div class="timeline-content">
+          <h3>Secondary School Certificate (SSC)</h3>
+          <p class="institution">St. Joseph's High School, Khulna</p>
+          <p class="period">Jan 2017 - Feb 2019</p>
+          <span class="badge">GPA: 5.00/5.00 — 93% marks in PCM</span>
+        </div>
+      </div>
+
+      <div class="timeline-item right">
+        <div class="timeline-content">
+          <h3>Junior School Certificate (JSC)</h3>
+          <p class="institution">St. Joseph's High School, Khulna</p>
+          <p class="period">Jan 2014 - Dec 2016</p>
+          <span class="badge">GPA: 5.00/5.00</span>
+        </div>
+      </div>
+
+      <div class="timeline-item left">
+        <div class="timeline-content">
+          <h3>Primary School Certificate (PSC)</h3>
+          <p class="institution">St. Joseph's High School, Khulna</p>
+          <p class="period">Jan 2011 - Dec 2013</p>
+          <span class="badge">GPA: 5.00/5.00</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Projects -->
-  <section id="projects">
+  <!-- PROJECTS -->
+  <section id="projects" class="container section">
     <h2 class="section-title">Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card">Project 1</div>
-      <div class="project-card">Project 2</div>
-      <div class="project-card">Project 3</div>
+
+    <div class="card">
+      <h3>Distillation Column Simulation</h3>
+      <p>Designed and analyzed a binary distillation column using the McCabe–Thiele method.</p>
+    </div>
+
+    <div class="card">
+      <h3>Flowmeter Calibration</h3>
+      <p>Conducted experiments on rotameter calibration using flowmeter and lab data.</p>
+    </div>
+
+    <div class="card">
+      <h3>Data Analysis with PCA</h3>
+      <p>Applied Principal Component Analysis on multivariate datasets for dimensionality reduction.</p>
     </div>
   </section>
 
-  <!-- Skills -->
-  <section id="skills">
+  <!-- SKILLS -->
+  <section id="skills" class="container section">
     <h2 class="section-title">Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-card">Microsoft PowerPoint</div>
-      <div class="skill-card">SPSS Statistics</div>
-      <div class="skill-card">Microsoft Excel</div>
-      <div class="skill-card">AutoCAD</div>
-      <div class="skill-card">MATLAB</div>
-      <div class="skill-card">Microsoft Office</div>
-      <div class="skill-card">Data Analysis</div>
-      <div class="skill-card">Aspen Plus</div>
+
+    <p class="skills-intro">Tools & strengths I use regularly — click or press enter on a card for a quick readout.</p>
+
+    <div class="skills-grid" role="list">
+      <button class="skill-card" data-title="Microsoft PowerPoint" aria-label="Microsoft PowerPoint" role="listitem">
+        <div class="skill-icon"><i class="fa-solid fa-file-powerpoint"></i></div>
+        <div class="skill-info"><strong>PowerPoint</strong><small>Slide decks & presentations</small></div>
+      </button>
+
+      <button class="skill-card" data-title="SPSS Statistics" aria-label="SPSS Statistics" role="listitem">
+        <div class="skill-icon"><i class="fa-solid fa-chart-pie"></i></div>
+        <div class="skill-info"><strong>SPSS</strong><small>Statistical analysis</small></div>
+      </button>
+
+      <button class="skill-card" data-title="Microsoft Excel" aria-label="Microsoft Excel" role="listitem">
+        <div class="skill-icon"><i class="fa-solid fa-file-excel"></i></div>
+        <div class="skill-info"><strong>Excel</strong><small>Data cleaning & modeling</small></div>
+      </button>
+
+      <button class="skill-card" data-title="AutoCAD" aria-label="AutoCAD" role="listitem">
+        <div class="skill-icon"><i class="fa-solid fa-ruler-combined"></i></div>
+        <div class="skill-info"><strong>AutoCAD</strong><small>Technical drawings & drafting</small></div>
+      </button>
+
+      <button class="skill-card" data-title="MATLAB" aria-label="MATLAB" role="listitem">
+        <div class="skill-icon"><i class="fa-solid fa-calculator"></i></div>
+        <div class="skill-info"><strong>MATLAB</strong><small>Numerical computing</small></div>
+      </button>
+
+      <button class="skill-card" data-title="Microsoft Office" aria-label="Microsoft Office" role="listitem">
+        <div class="skill-icon"><i class="fa-brands fa-microsoft"></i></div>
+        <div class="skill-info"><strong>MS Office</strong><small>Docs, Sheets, Slides</small></div>
+      </button>
+
+      <button class="skill-card" data-title="Data Analysis" aria-label="Data Analysis" role="listitem">
+        <div class="skill-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <div class="skill-info"><strong>Data Analysis</strong><small>Pandas, NumPy, visualization</small></div>
+      </button>
+
+      <button class="skill-card" data-title="Aspen Plus" aria-label="Aspen Plus" role="listitem">
+        <div class="skill-icon"><i class="fa-solid fa-industry"></i></div>
+        <div class="skill-info"><strong>Aspen Plus</strong><small>Process simulation</small></div>
+      </button>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <h2 class="section-title">Contact</h2>
-    <div class="contact-icons">
-      <a href="mailto:mehrabhossainsifat@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-      <a href="mailto:2102016@che.buet.ac.bd"><i class="fa-solid fa-at"></i></a>
-      <a href="https://www.facebook.com/legend.sifat" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.linkedin.com/in/mehrabhossain16" target="_blank"><i class="fab fa-linkedin"></i></a>
+  <!-- CONTACT (footer-centered icons only) -->
+  <footer id="contact" class="footer-contact">
+    <div class="container footer-inner">
+      <div class="contact-icons" aria-hidden="false">
+        <a href="mailto:mehrabhossainsifat@gmail.com" aria-label="Email Mehrab"><i class="fa-solid fa-envelope"></i></a>
+        <a href="mailto:2102016@che.buet.ac.bd" aria-label="Email BUET"><i class="fa-solid fa-envelope-circle-check"></i></a>
+        <a href="https://www.facebook.com/legend.sifat" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.linkedin.com/in/mehrabhossain16" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+      <p class="footer-copy">© 2025 Mehrab Hossain</p>
     </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Mehrab Hossain Sifat</p>
   </footer>
 
+  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
