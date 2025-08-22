@@ -419,3 +419,58 @@ body.dark .skill-card {
   color: var(--text);
 }
 body.dark .skill-info small { color: rgba(255,255,255,0.72); }
+
+/* Contact Section */
+.contact-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: #f5f7fa;
+}
+
+.contact-section h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.contact-section p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.contact-section a {
+    color: #0077b5;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-section a:hover {
+    text-decoration: underline;
+}
+
+/* Social Icons */
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    font-size: 1.8rem;
+    color: #333;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #0077b5;
+    transform: scale(1.2);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #111;
+    color: #fff;
+    font-size: 0.9rem;
+}
