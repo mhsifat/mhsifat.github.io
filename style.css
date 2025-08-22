@@ -196,3 +196,22 @@ body.dark .skills-list li {
   border-radius: 12px;
   font-size: 0.85rem;
 }
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 20px;
+    transform: none;
+  }
+
+  .timeline-item, .timeline-item.right {
+    width: 100%;
+    left: 0;
+    text-align: left;
+    padding-left: 40px; /* Space for the line */
+  }
+
+  .timeline-content {
+    /* Optional: adjust padding or width if needed */
+    width: calc(100% - 40px);
+  }
+}
