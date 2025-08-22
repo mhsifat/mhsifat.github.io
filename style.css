@@ -132,3 +132,20 @@ body.dark .skills-list li {
   background: #555;
   color: #fff;
 }
+
+/* Education Progress Bars */
+.progress-bar {
+  background: #e0e0e0;
+  border-radius: 20px;
+  height: 15px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: #007acc;
+  width: 0;
+  border-radius: 20px;
+  transition: width 1.5s ease-in-out;
+}
