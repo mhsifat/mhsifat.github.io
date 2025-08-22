@@ -1,89 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mehrab Hossain - Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Hero Section -->
+  <!-- Header / Hero -->
   <header class="hero">
-    <div class="hero-content">
-      <img src="images/profile.jpg" alt="Mehrab Hossain" class="profile-pic">
-      <h1>Mehrab Hossain</h1>
-      <p><span class="typing"></span></p>
-      <nav>
+    <div class="hero-inner container">
+      <div class="brand">
+        <img src="images/profile.jpg" alt="Mehrab Hossain" class="profile-pic" />
+        <div>
+          <h1>Mehrab Hossain</h1>
+          <p class="subtitle"><span class="typing" aria-hidden="true"></span></p>
+        </div>
+      </div>
+
+      <!-- hamburger -->
+      <button class="hamburger" id="menuButton" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- nav -->
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#education">Education</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </nav>
-      <button id="darkModeToggle">🌙 Dark Mode</button>
+
+      <div class="hero-controls">
+        <button id="darkModeToggle" class="mode-btn" aria-pressed="false">🌙</button>
+      </div>
     </div>
   </header>
 
   <!-- About -->
-  <section id="about" class="container">
+  <section id="about" class="container section">
     <h2>About Me</h2>
     <p>
-      I’m a Chemical Engineering undergraduate at BUET. I’m passionate about process design, 
-      thermodynamics, and data analysis. Outside academics, I enjoy traveling, exploring 
-      new ideas, and solving real-world problems.
+      I’m a Chemical Engineering undergraduate at BUET. I’m passionate about process design,
+      thermodynamics, and data analysis. Outside academics, I enjoy traveling, exploring new
+      ideas, and solving real-world problems.
     </p>
   </section>
 
-<!-- Education Timeline -->
-<section id="education" class="container">
-  <h2>Education</h2>
-  <div class="timeline">
+  <!-- Education Timeline -->
+  <section id="education" class="container section">
+    <h2>Education</h2>
+    <div class="timeline">
 
-    <div class="timeline-item left">
-      <div class="timeline-content">
-        <h3>Bachelor of Science in Chemical Engineering</h3>
-        <p>Bangladesh University of Engineering and Technology | Jul 2022 - Present</p>
-        <span class="badge">CGPA: 3.86/4.00, top 10% of class</span>
+      <div class="timeline-item left">
+        <div class="timeline-content">
+          <h3>Bachelor of Science in Chemical Engineering</h3>
+          <p>Bangladesh University of Engineering and Technology | Jul 2022 - Present</p>
+          <span class="badge">CGPA: 3.86/4.00 — top 10% of class</span>
+        </div>
       </div>
-    </div>
 
-    <div class="timeline-item right">
-      <div class="timeline-content">
-        <h3>Higher Secondary Certificate (HSC)</h3>
-        <p>Bangladesh Navy College, Khulna | Jul 2019 - Feb 2022</p>
-        <span class="badge">GPA: 5.00/5.00, 96% marks in PCM</span>
+      <div class="timeline-item right">
+        <div class="timeline-content">
+          <h3>Higher Secondary Certificate (HSC)</h3>
+          <p>Bangladesh Navy College, Khulna | Jul 2019 - Feb 2022</p>
+          <span class="badge">GPA: 5.00/5.00 — 96% in PCM</span>
+        </div>
       </div>
-    </div>
 
-    <div class="timeline-item left">
-      <div class="timeline-content">
-        <h3>Secondary School Certificate (SSC)</h3>
-        <p>St. Joseph's High School, Khulna | Jan 2017 - Feb 2019</p>
-        <span class="badge">GPA: 5.00/5.00, 93% marks in PCM</span>
+      <div class="timeline-item left">
+        <div class="timeline-content">
+          <h3>Secondary School Certificate (SSC)</h3>
+          <p>St. Joseph's High School, Khulna | Jan 2017 - Feb 2019</p>
+          <span class="badge">GPA: 5.00/5.00 — 93% in PCM</span>
+        </div>
       </div>
-    </div>
 
-    <div class="timeline-item right">
-      <div class="timeline-content">
-        <h3>Junior School Certificate (JSC)</h3>
-        <p>St. Joseph's High School, Khulna | Jan 2014 - Dec 2016</p>
-        <span class="badge">GPA: 5.00/5.00</span>
+      <div class="timeline-item right">
+        <div class="timeline-content">
+          <h3>Junior School Certificate (JSC)</h3>
+          <p>St. Joseph's High School, Khulna | Jan 2014 - Dec 2016</p>
+          <span class="badge">GPA: 5.00/5.00</span>
+        </div>
       </div>
-    </div>
 
-    <div class="timeline-item left">
-      <div class="timeline-content">
-        <h3>Primary School Certificate (PSC)</h3>
-        <p>St. Joseph's High School, Khulna | Jan 2011 - Dec 2013</p>
-        <span class="badge">GPA: 5.00/5.00</span>
+      <div class="timeline-item left">
+        <div class="timeline-content">
+          <h3>Primary School Certificate (PSC)</h3>
+          <p>St. Joseph's High School, Khulna | Jan 2011 - Dec 2013</p>
+          <span class="badge">GPA: 5.00/5.00</span>
+        </div>
       </div>
-    </div>
 
-  </div>
-</section>
+    </div>
+  </section>
 
   <!-- Projects -->
-  <section id="projects" class="container">
+  <section id="projects" class="container section">
     <h2>Projects</h2>
     <div class="card">
       <h3>Distillation Column Simulation</h3>
@@ -100,7 +114,7 @@
   </section>
 
   <!-- Skills -->
-  <section id="skills" class="container">
+  <section id="skills" class="container section">
     <h2>Skills</h2>
     <ul class="skills-list">
       <li>MATLAB</li>
@@ -112,7 +126,7 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="container">
+  <section id="contact" class="container section">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:mehrab@example.com">mehrab@example.com</a></p>
     <p>GitHub: <a href="https://github.com/mhsifat">github.com/mhsifat</a></p>
@@ -121,10 +135,11 @@
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Mehrab Hossain</p>
+    <div class="container">
+      <p>© 2025 Mehrab Hossain</p>
+    </div>
   </footer>
 
-  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
