@@ -133,3 +133,53 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 
 document.querySelectorAll('.card, .section .card, .timeline-item').forEach(el => observer.observe(el));
+
+/* --- Skills reveal with staggered animation + accessible click --- */
+(function() {
+  const skillCards = document.querySelectorAll('.skill-card');
+  if (!skillCards || skillCards.length === 0) return;
+
+  // IntersectionObserver to reveal with stagger
+  const skillsObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const card = entry.target;
+      // determine index for stagger
+      const index = Array.from(skillCards).indexOf(card);
+      // stagger delay based on index
+      card.style.transitionDelay = (index * 80) + 'ms';
+      card.classList.add('show');
+      obs.unobserve(card);
+    });
+  }, { threshold: 0.18 });
+
+  skillCards.forEach(card => skillsObserver.observe(card));
+
+  // Simple click: show a subtle tooltip-like accessible label (browser title)
+  skillCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const title = card.getAttribute('data-title') || 'Skill';
+      // Small visual feedback: scale briefly
+      card.animate([{ transform: 'scale(1.02)' }, { transform: 'scale(1)' }], { duration: 200 });
+      // We show a subtle aria-live message for screen readers
+      let live = document.getElementById('skillLiveRegion');
+      if (!live) {
+        live = document.createElement('div');
+        live.id = 'skillLiveRegion';
+        live.setAttribute('aria-live', 'polite');
+        live.style.position = 'absolute';
+        live.style.left = '-9999px';
+        document.body.appendChild(live);
+      }
+      live.textContent = `${title} — ${card.querySelector('small').textContent}`;
+    });
+
+    // keyboard support: Enter/Space to "activate"
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        card.click();
+      }
+    });
+  });
+})();
