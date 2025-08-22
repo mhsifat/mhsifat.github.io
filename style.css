@@ -314,3 +314,14 @@ h3 {
   opacity: 1;
   transform: translateY(0);
 }
+
+.contact a {
+  font-size: 28px;
+  margin: 0 10px;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.contact a:hover {
+  color: #0077b5; /* LinkedIn blue */
+}
