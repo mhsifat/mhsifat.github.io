@@ -133,19 +133,64 @@ body.dark .skills-list li {
   color: #fff;
 }
 
-/* Education Progress Bars */
-.progress-bar {
-  background: #e0e0e0;
-  border-radius: 20px;
-  height: 15px;
-  margin: 10px 0;
-  overflow: hidden;
+/* Timeline Styles */
+.timeline {
+  position: relative;
+  margin: 40px 0;
+  padding-left: 30px;
 }
 
-.progress {
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  width: 4px;
   height: 100%;
   background: #007acc;
-  width: 0;
-  border-radius: 20px;
-  transition: width 1.5s ease-in-out;
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.6s ease-out;
+}
+
+.timeline-item.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.timeline-icon {
+  position: absolute;
+  left: -5px;
+  background: #007acc;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  font-size: 16px;
+}
+
+.timeline-content {
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-left: 50px;
+}
+
+.badge {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 5px 10px;
+  background: #007acc;
+  color: #fff;
+  border-radius: 12px;
+  font-size: 0.85rem;
 }
