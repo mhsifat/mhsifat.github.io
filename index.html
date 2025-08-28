@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Mehrab Hossain — Portfolio</title>
 
+  <!-- favicon / touch icon -->
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/logo.png">
+  <meta name="theme-color" content="#2b004f">
+
   <!-- Google font (Inter) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,8 +25,16 @@
   <!-- HERO / HEADER -->
   <header class="hero">
     <div class="hero-inner container">
+
       <div class="brand">
+        <!-- clickable site logo -->
+        <a href="/" class="logo-link" aria-label="Mehrab Hossain home">
+          <img src="images/logo.png" alt="M H Sifat logo" class="site-logo">
+        </a>
+
+        <!-- profile pic -->
         <img src="images/profile.jpg" alt="Mehrab Hossain" class="profile-pic" />
+
         <div class="brand-text">
           <h1 class="name">Mehrab Hossain</h1>
           <p class="subtitle"><span class="typing" aria-hidden="true"></span></p>
@@ -44,25 +57,24 @@
 
       <!-- Dark mode toggle -->
       <div class="hero-controls">
-        <button id="darkModeToggle" class="mode-btn" aria-pressed="false">🌙</button>
+        <button id="darkModeToggle" class="mode-btn" aria-pressed="false" title="Toggle dark mode">🌙</button>
       </div>
     </div>
   </header>
 
   <!-- ABOUT -->
- <section id="about" class="container section">
-  <h2 class="section-title">About Me</h2>
+  <section id="about" class="container section">
+    <h2 class="section-title">About Me</h2>
 
-  <!-- ABOUT CARD (better contrast & consistent) -->
-  <div class="card about-card">
-    <p>
-      I’m a Chemical Engineering undergraduate at BUET. I’m passionate about process design,
-      thermodynamics, and data analysis. Outside academics I enjoy traveling, exploring new ideas,
-      and solving real-world problems.
-    </p>
-  </div>
-</section>
-
+    <!-- ABOUT CARD (better contrast & consistent) -->
+    <div class="card about-card">
+      <p>
+        I’m a Chemical Engineering undergraduate at BUET. I’m passionate about process design,
+        thermodynamics, and data analysis. Outside academics I enjoy traveling, exploring new ideas,
+        and solving real-world problems.
+      </p>
+    </div>
+  </section>
 
   <!-- EDUCATION (alternating timeline) -->
   <section id="education" class="container section">
@@ -139,6 +151,8 @@
   <!-- SKILLS -->
   <section id="skills" class="container section">
     <h2 class="section-title">Skills</h2>
+
+    <p class="skills-intro">Tools & strengths I use regularly — click a card to read a brief note (keyboard accessible).</p>
 
     <div class="skills-grid" role="list">
       <button class="skill-card" data-title="Microsoft PowerPoint" aria-label="Microsoft PowerPoint" role="listitem">
