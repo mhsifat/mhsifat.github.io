@@ -146,15 +146,114 @@
   </section>
 
   <!-- SKILLS -->
-  <section id="skills" class="container section">
-    <h2 class="section-title">Skills</h2>
+<section id="skills" class="container section">
+  <h2 class="section-title">Skills</h2>
 
-    <p class="skills-intro">Tools & strengths I use regularly — click a card to read a brief note (keyboard accessible).</p>
+  <p class="skills-intro">Tools & strengths I use regularly — click a card to read a brief note (keyboard accessible).</p>
 
-    <div class="skills-grid" role="list">
-      <!-- skill cards omitted for brevity in this example; keep yours -->
-    </div>
-  </section>
+  <div class="skills-grid" role="list" aria-label="Skills list">
+    <!-- Microsoft PowerPoint -->
+    <button class="skill-card" data-title="Microsoft PowerPoint" aria-label="Microsoft PowerPoint" role="listitem">
+      <div class="skill-icon" aria-hidden="true">
+        <!-- PPT SVG -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="2" y="3" width="14" height="18" rx="2" fill="white" opacity="0.06"/>
+          <path d="M6 7H14V17H6z" fill="currentColor" opacity="0.12"/>
+          <path d="M16 7H20V17H16V7Z" fill="currentColor"/>
+          <path d="M7 9H13V11H7V9Z" fill="white"/>
+        </svg>
+      </div>
+      <div class="skill-info"><strong>PowerPoint</strong><small>Slide decks & presentations</small></div>
+    </button>
+
+    <!-- SPSS -->
+    <button class="skill-card" data-title="SPSS Statistics" aria-label="SPSS Statistics" role="listitem">
+      <div class="skill-icon" aria-hidden="true">
+        <!-- simple chart SVG -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="9" width="3" height="11" rx="1" fill="currentColor"/>
+          <rect x="9" y="5" width="3" height="15" rx="1" fill="currentColor"/>
+          <rect x="15" y="2" width="3" height="18" rx="1" fill="currentColor"/>
+        </svg>
+      </div>
+      <div class="skill-info"><strong>SPSS</strong><small>Statistical analysis</small></div>
+    </button>
+
+    <!-- Excel -->
+    <button class="skill-card" data-title="Microsoft Excel" aria-label="Microsoft Excel" role="listitem">
+      <div class="skill-icon" aria-hidden="true">
+        <!-- Excel-like SVG -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="18" height="18" rx="2" fill="currentColor" opacity="0.12"/>
+          <path d="M7 7H17V17H7V7Z" fill="currentColor"/>
+          <path d="M8.5 8.5L11.2 11L8.5 13.5" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="skill-info"><strong>Excel</strong><small>Data cleaning & modeling</small></div>
+    </button>
+
+    <!-- AutoCAD -->
+    <button class="skill-card" data-title="AutoCAD" aria-label="AutoCAD" role="listitem">
+      <div class="skill-icon" aria-hidden="true">
+        <!-- ruler/triangle icon -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 21L21 3L15 3L3 15V21Z" fill="currentColor" opacity="0.12"/>
+          <path d="M5 19L19 5" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="skill-info"><strong>AutoCAD</strong><small>Technical drawings & drafting</small></div>
+    </button>
+
+    <!-- MATLAB -->
+    <button class="skill-card" data-title="MATLAB" aria-label="MATLAB" role="listitem">
+      <div class="skill-icon" aria-hidden="true">
+        <!-- wave icon -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 12C6 6 10 6 14 12C18 18 22 18 22 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="skill-info"><strong>MATLAB</strong><small>Numerical computing</small></div>
+    </button>
+
+    <!-- MS Office -->
+    <button class="skill-card" data-title="Microsoft Office" aria-label="Microsoft Office" role="listitem">
+      <div class="skill-icon" aria-hidden="true">
+        <!-- grid icon -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="8" height="8" rx="1.2" fill="currentColor"/>
+          <rect x="13" y="3" width="8" height="8" rx="1.2" fill="currentColor" opacity="0.18"/>
+          <rect x="3" y="13" width="8" height="8" rx="1.2" fill="currentColor" opacity="0.18"/>
+          <rect x="13" y="13" width="8" height="8" rx="1.2" fill="currentColor" opacity="0.18"/>
+        </svg>
+      </div>
+      <div class="skill-info"><strong>MS Office</strong><small>Docs, Sheets, Slides</small></div>
+    </button>
+
+    <!-- Data Analysis -->
+    <button class="skill-card" data-title="Data Analysis" aria-label="Data Analysis" role="listitem">
+      <div class="skill-icon" aria-hidden="true">
+        <!-- line-chart -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 17L8.5 11L12 14L18 7L21 10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="skill-info"><strong>Data Analysis</strong><small>Pandas, NumPy, visualization</small></div>
+    </button>
+
+    <!-- Aspen Plus -->
+    <button class="skill-card" data-title="Aspen Plus" aria-label="Aspen Plus" role="listitem">
+      <div class="skill-icon" aria-hidden="true">
+        <!-- factory icon -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="8" width="6" height="8" fill="currentColor" opacity="0.18"/>
+          <rect x="11" y="6" width="10" height="10" fill="currentColor"/>
+        </svg>
+      </div>
+      <div class="skill-info"><strong>Aspen Plus</strong><small>Process simulation</small></div>
+    </button>
+  </div>
+</section>
+
 
   <!-- CONTACT (footer-centered icons only) -->
   <footer id="contact" class="footer-contact">
