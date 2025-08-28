@@ -349,3 +349,44 @@ body.dark .skill-info small { color: rgba(255,255,255,0.72); }
 @media (max-width: 880px) {
   .site-logo { width: 48px; height: 48px; }
 }
+
+/* Skills: stronger defaults + tooltip + focus styles */
+.skills-intro { color: rgba(255,255,255,0.9); margin-top: 6px; }
+
+/* ensure icons (SVG) inherit the gradient color from .skill-icon */
+.skill-icon svg { width: 28px; height: 28px; fill: none; stroke: white; }
+
+/* Use CSS variables to paint the icon background and stroke */
+.skill-icon { 
+  width: 56px; height: 56px; display: grid; place-items: center; border-radius: 12px;
+  background: linear-gradient(135deg, rgba(106,0,255,0.95), rgba(202,166,255,0.95));
+  color: white; font-size: 1.25rem; box-shadow: 0 8px 24px rgba(43,0,79,0.25);
+  transition: transform .28s ease, box-shadow .28s ease, background .28s ease;
+}
+.skill-card { 
+  cursor: pointer; outline: none; 
+}
+.skill-card:focus .skill-icon,
+.skill-card:hover .skill-icon { transform: translateY(-6px) scale(1.03); box-shadow: 0 16px 42px rgba(43,0,79,0.28); }
+
+/* Tooltip-like visual feedback on activation */
+.skill-card .skill-note {
+  display: none;
+  font-size: 0.9rem;
+  margin-left: 8px;
+  color: rgba(0,0,0,0.6);
+}
+.skill-card.active .skill-note { display:block; }
+
+/* reveal / transition */
+.skill-card { transition: transform .42s cubic-bezier(.2,.9,.2,1), opacity .42s; transform: translateY(28px); opacity: 0; }
+.skill-card.show { transform: translateY(0); opacity: 1; }
+
+/* accessible focus ring */
+.skill-card:focus { box-shadow: 0 0 0 4px rgba(106,0,255,0.12); border-radius: 12px; }
+
+/* small screens */
+@media (max-width: 520px) {
+  .skill-icon { width: 48px; height: 48px; }
+  .skill-info strong { font-size: 0.98rem; }
+}
