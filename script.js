@@ -112,33 +112,76 @@ document.addEventListener("DOMContentLoaded", () => {
     toObserve.forEach(el => el.classList.add("show"));
   }
 
-  /* ---------------------------
-     Skill card accessibility behavior
-     --------------------------- */
-  skillCards.forEach(card => {
-    card.setAttribute("tabindex", "0");
-    card.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
+/* ---------------------------
+   Robust skills reveal + interaction
+   --------------------------- */
+(function setupSkills() {
+  const skillCards = Array.from(document.querySelectorAll('.skill-card'));
+  if (!skillCards.length) return;
+
+  // IntersectionObserver to reveal with stagger
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((entries, o) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const idx = skillCards.indexOf(el);
+        el.style.transitionDelay = (idx * 80) + 'ms';
+        el.classList.add('show');
+        o.unobserve(el);
+      });
+    }, { threshold: 0.18 });
+    skillCards.forEach(c => obs.observe(c));
+  } else {
+    // fallback: show all
+    skillCards.forEach((c, i) => {
+      c.style.transitionDelay = (i * 60) + 'ms';
+      c.classList.add('show');
+    });
+  }
+
+  // keyboard accessible activation + live region announcement
+  let live = document.getElementById('skillLiveRegion');
+  if (!live) {
+    live = document.createElement('div');
+    live.id = 'skillLiveRegion';
+    live.setAttribute('aria-live', 'polite');
+    live.style.position = 'absolute';
+    live.style.left = '-9999px';
+    document.body.appendChild(live);
+  }
+
+  skillCards.forEach((card) => {
+    // ensure keyboard focusable
+    if (!card.hasAttribute('tabindex')) card.setAttribute('tabindex', '0');
+
+    // click/activation
+    card.addEventListener('click', () => {
+      // toggle a brief active state
+      card.classList.add('active');
+      setTimeout(() => card.classList.remove('active'), 900);
+
+      const title = card.getAttribute('data-title') || card.querySelector('strong')?.textContent || 'Skill';
+      const note = card.querySelector('small') ? card.querySelector('small').textContent : '';
+      live.textContent = `${title} — ${note}`;
+
+      // small visual press effect
+      card.animate([{ transform: 'scale(1.02)' }, { transform: 'scale(1)' }], { duration: 200 });
+    });
+
+    // keyboard activation (Enter / Space)
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         card.click();
       }
     });
 
-    card.addEventListener("click", () => {
-      const title = card.getAttribute("data-title") || "Skill";
-      const note = card.querySelector('small') ? card.querySelector('small').textContent : '';
-      card.animate([{ transform: 'scale(1.02)' }, { transform: 'scale(1)' }], { duration: 160 });
-      let live = document.getElementById('skillLiveRegion');
-      if (!live) {
-        live = document.createElement('div');
-        live.id = 'skillLiveRegion';
-        live.setAttribute('aria-live', 'polite');
-        live.style.position = 'absolute';
-        live.style.left = '-9999px';
-        document.body.appendChild(live);
-      }
-      live.textContent = `${title} — ${note}`;
-    });
+    // nicer hover outline for focus-visible
+    card.addEventListener('focus', () => card.classList.add('focus'));
+    card.addEventListener('blur', () => card.classList.remove('focus'));
   });
+})();
+
 
 }); // end DOMContentLoaded
