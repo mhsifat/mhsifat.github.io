@@ -340,3 +340,12 @@ body.dark .skill-card {
   color: #e6e6ea;
 }
 body.dark .skill-info small { color: rgba(255,255,255,0.72); }
+
+/* Slightly larger logo when used alone */
+.site-logo {
+  width: 64px;
+  height: 64px;
+}
+@media (max-width: 880px) {
+  .site-logo { width: 48px; height: 48px; }
+}
