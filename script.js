@@ -1,4 +1,4 @@
-// script.js — DOMContentLoaded initialization (header award removed)
+// script.js — DOMContentLoaded initialization
 document.addEventListener("DOMContentLoaded", () => {
 
   /* ---------------------------
@@ -117,7 +117,8 @@ document.addEventListener("DOMContentLoaded", () => {
      Skill card accessibility + activation
      --------------------------- */
   (function setupSkillCards() {
-    if (!skillCards.length) return;
+    const skillCardsLocal = Array.from(document.querySelectorAll('.skill-card'));
+    if (!skillCardsLocal.length) return;
     let live = document.getElementById('skillLiveRegion');
     if (!live) {
       live = document.createElement('div');
@@ -128,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.appendChild(live);
     }
 
-    skillCards.forEach(card => {
+    skillCardsLocal.forEach(card => {
       if (!card.hasAttribute('tabindex')) card.setAttribute('tabindex', '0');
       card.addEventListener('click', () => {
         const title = card.getAttribute('data-title') || card.querySelector('strong')?.textContent || 'Skill';
